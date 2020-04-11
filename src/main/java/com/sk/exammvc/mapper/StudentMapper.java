@@ -30,7 +30,7 @@ public interface StudentMapper {
      * @return 受影响的记录条数
      */
     @Update("update student set studentName = #{studentName},grade = #{grade},major = #{major},clazz = #{clazz}," +
-            "institute = #{institute},tel = #{tel},email = #{email},pwd = #{pwd},cardId = #{cardId},sex = #{sex},role = #{role} " +
+            "institute = #{institute},tel = #{tel},pwd = #{pwd},cardId = #{cardId},sex = #{sex},role = #{role} " +
             "where studentId = #{studentId}")
     int update(Student student);
 
@@ -44,7 +44,7 @@ public interface StudentMapper {
 
 
     @Options(useGeneratedKeys = true,keyProperty = "studentId")
-    @Insert("insert into student(studentName,grade,major,clazz,institute,tel,email,pwd,cardId,sex,role) values " +
-            "(#{studentName},#{grade},#{major},#{clazz},#{institute},#{tel},#{email},#{pwd},#{cardId},#{sex},#{role})")
+    @Insert("insert into student(studentName,grade,major,clazz,institute,tel,pwd,cardId,sex,role) values " +
+            "(#{studentName},#{grade},#{major},#{clazz},#{institute},#{tel},#{pwd},#{cardId},#{sex},#{role})")
     int add(Student student);
 }
