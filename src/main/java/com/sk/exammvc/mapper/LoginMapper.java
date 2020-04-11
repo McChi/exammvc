@@ -10,7 +10,7 @@ import org.springframework.stereotype.Repository;
 
 public interface LoginMapper {
 
-    @Select("select adminId,adminName,sex,tel,email,cardId,role from admin where adminId = #{username} and pwd = #{password}")
+    @Select("select adminId,adminName,role from admin where adminId = #{username} and pwd = #{password}")
     Admin adminLogin(Integer username, String password);
 
     @Select("select teacherId,teacherName,institute,sex,tel,email,cardId," +
@@ -18,6 +18,6 @@ public interface LoginMapper {
     Teacher teacherLogin(Integer username, String password);
 
     @Select("select studentId,studentName,grade,major,clazz,institute,tel," +
-            "email,cardId,sex,role from student where studentId = #{username} and pwd = #{password}")
+            "cardId,sex,role from student where studentId = #{username} and pwd = #{password}")
     Student studentLogin(Integer username, String password);
 }
