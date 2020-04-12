@@ -15,7 +15,6 @@ public interface StudentMapper {
      * @param page 分页对象
      * @return List<Student>
      */
-
     IPage<Student> findAll(Page page);
 
     /**
@@ -24,7 +23,6 @@ public interface StudentMapper {
     * @param studentId 学号
     * @return com.sk.exammvc.entity.Student
     **/
-    @Select("select * from student where studentId = #{studentId}")
     Student findById(Integer studentId);
 
     /**
@@ -33,7 +31,6 @@ public interface StudentMapper {
     * @param studentId 学号
     * @return int
     **/
-    @Delete("delete from student where studentId = #{studentId}")
     int deleteById(Integer studentId);
 
     /**
@@ -42,9 +39,6 @@ public interface StudentMapper {
      * @param student 传递一个对象
      * @return 受影响的记录条数
      */
-    @Update("update student set studentName = #{studentName},grade = #{grade},major = #{major},clazz = #{clazz}," +
-            "institute = #{institute},tel = #{tel},pwd = #{pwd},cardId = #{cardId},sex = #{sex},role = #{role} " +
-            "where studentId = #{studentId}")
     int update(Student student);
 
     /**
@@ -53,7 +47,6 @@ public interface StudentMapper {
      * @param student 学生信息
      * @return 受影响的记录条数
      */
-    @Update("update student set pwd = #{pwd} where studentId = #{studentId}")
     int updatePwd(Student student);
 
     /**
@@ -63,7 +56,5 @@ public interface StudentMapper {
     * @return int
     **/
     @Options(useGeneratedKeys = true,keyProperty = "studentId")
-    @Insert("insert into student(studentName,grade,major,clazz,institute,tel,pwd,cardId,sex,role) values " +
-            "(#{studentName},#{grade},#{major},#{clazz},#{institute},#{tel},#{pwd},#{cardId},#{sex},#{role})")
     int add(Student student);
 }
