@@ -1,8 +1,6 @@
 package com.sk.exammvc.dao;
 
 import com.sk.exammvc.entity.PaperManage;
-import org.apache.ibatis.annotations.Insert;
-import org.apache.ibatis.annotations.Select;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -16,7 +14,6 @@ public interface PaperMapper {
     *
     * @return java.util.List<com.sk.exammvc.entity.PaperManage>
     **/
-    @Select("select paperId, questionType,questionId from paper_manage")
     List<PaperManage> findAll();
 
     /**
@@ -25,7 +22,6 @@ public interface PaperMapper {
     * @param paperId 试卷号
     * @return java.util.List<com.sk.exammvc.entity.PaperManage>
     **/
-    @Select("select paperId, questionType,questionId from paper_manage where paperId = #{paperId}")
     List<PaperManage> findById(Integer paperId);
 
     /**
@@ -34,7 +30,5 @@ public interface PaperMapper {
     * @param paperManage 试卷信息
     * @return int
     **/
-    @Insert("insert into paper_manage(paperId,questionType,questionId) values " +
-            "(#{paperId},#{questionType},#{questionId})")
     int add(PaperManage paperManage);
 }
