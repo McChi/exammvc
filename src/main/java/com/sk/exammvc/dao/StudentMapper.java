@@ -15,7 +15,7 @@ public interface StudentMapper {
      * @param page 分页对象
      * @return List<Student>
      */
-    @Select("select * from student")
+
     IPage<Student> findAll(Page page);
 
     /**

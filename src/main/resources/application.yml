@@ -8,7 +8,7 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
     type: com.alibaba.druid.pool.DruidDataSource
 
-mybatis:
+mybatis-plus:
   configuration:
     mapUnderscoreToCamelCase: true
   mapper-locations: classpath:mapping/*Mapper.xml
