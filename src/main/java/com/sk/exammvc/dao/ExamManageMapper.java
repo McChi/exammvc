@@ -16,7 +16,6 @@ public interface ExamManageMapper {
     *
     * @return java.util.List<com.sk.exammvc.entity.ExamManage>
     **/
-    @Select("select * from exam_manage")
     List<ExamManage> findAll();
 
     /**
@@ -25,8 +24,7 @@ public interface ExamManageMapper {
     * @param page 分页对象
     * @return com.baomidou.mybatisplus.core.metadata.IPage<com.sk.exammvc.entity.ExamManage>
     **/
-    @Select("select * from exam_manage")
-    IPage<ExamManage> findAll(Page page);
+    IPage<ExamManage> findAllByPage(Page page);
 
     /**
     * 按照试卷号查找试卷
@@ -34,7 +32,6 @@ public interface ExamManageMapper {
     * @param examCode 试卷号
     * @return com.sk.exammvc.entity.ExamManage
     **/
-    @Select("select * from exam_manage where examCode = #{examCode}")
     ExamManage findById(Integer examCode);
 
     /**
@@ -43,7 +40,6 @@ public interface ExamManageMapper {
     * @param examCode 试卷号
     * @return int
     **/
-    @Delete("delete from exam_manage where examCode = #{examCode}")
     int delete(Integer examCode);
 
     /**
@@ -52,10 +48,6 @@ public interface ExamManageMapper {
     * @param exammanage 试卷信息
     * @return int
     **/
-    @Update("update exam_manage set description = #{description},source = #{source},paperId = #{paperId}," +
-            "examDate = #{examDate},totalTime = #{totalTime},grade = #{grade}," +
-            "major = #{major},institute = #{institute},totalScore = #{totalScore}," +
-            "type = #{type},tips = #{tips} where examCode = #{examCode}")
     int update(ExamManage exammanage);
 
     /**
@@ -65,8 +57,6 @@ public interface ExamManageMapper {
     * @return int
     **/
     @Options(useGeneratedKeys = true,keyProperty = "examCode")
-    @Insert("insert into exam_manage(description,source,paperId,examDate,totalTime,grade,major,institute,totalScore,type,tips)" +
-            " values(#{description},#{source},#{paperId},#{examDate},#{totalTime},#{grade},#{major},#{institute},#{totalScore},#{type},#{tips})")
     int add(ExamManage exammanage);
 
     /**
@@ -74,6 +64,5 @@ public interface ExamManageMapper {
      *
      * @return paperId
      **/
-    @Select("select paperId from exam_manage order by paperId desc limit 1")
     ExamManage findOnlyPaperId();
 }

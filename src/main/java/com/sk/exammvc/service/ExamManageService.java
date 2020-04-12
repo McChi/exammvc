@@ -19,7 +19,7 @@ public class ExamManageService {
     }
 
     public IPage<ExamManage> findAll(Page<ExamManage> page) {
-        return examManageMapper.findAll(page);
+        return examManageMapper.findAllByPage(page);
     }
 
     public ExamManage findById(Integer examCode) {
