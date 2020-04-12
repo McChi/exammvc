@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sk.exammvc.dao.AdminMapper">
+    <select id="findAll" resultType="com.sk.exammvc.entity.Admin">
+        select adminName,role from admin
+    </select>
+    <select id="findById" resultType="com.sk.exammvc.entity.Admin">
+        select adminName,role from admin where adminId = #{adminId}
+    </select>
+    <delete id="deleteById">
+        delete from admin where adminId = #{adminId}
+    </delete>
+    <update id="update">
+        update admin set adminName = #{adminName},role = #{role} where adminId = #{adminId}
+    </update>
+    <insert id="add">
+        insert into admin(adminName,pwd,role) values(#{adminName},#{pwd},#{role})
+    </insert>
+</mapper>
