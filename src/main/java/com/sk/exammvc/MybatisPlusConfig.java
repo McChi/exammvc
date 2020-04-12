@@ -8,7 +8,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 @EnableTransactionManagement
 @Configuration
-@MapperScan("com.sk.**.mapper")
+@MapperScan("com.sk.**.dao")
 public class MybatisPlusConfig {
     /**
      * 分页插件

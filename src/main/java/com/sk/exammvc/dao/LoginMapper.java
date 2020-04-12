@@ -1,4 +1,4 @@
-package com.sk.exammvc.mapper;
+package com.sk.exammvc.dao;
 
 import com.sk.exammvc.entity.Admin;
 import com.sk.exammvc.entity.Student;

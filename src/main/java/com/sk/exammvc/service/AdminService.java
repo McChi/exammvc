@@ -1,7 +1,7 @@
 package com.sk.exammvc.service;
 
 import com.sk.exammvc.entity.Admin;
-import com.sk.exammvc.mapper.AdminMapper;
+import com.sk.exammvc.dao.AdminMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

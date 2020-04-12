@@ -1,7 +1,7 @@
 package com.sk.exammvc.service;
 
 import com.sk.exammvc.entity.PaperManage;
-import com.sk.exammvc.mapper.PaperMapper;
+import com.sk.exammvc.dao.PaperMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

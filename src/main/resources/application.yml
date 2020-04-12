@@ -11,6 +11,8 @@ spring:
 mybatis:
   configuration:
     mapUnderscoreToCamelCase: true
+  mapper-locations: classpath:mapping/*Mapper.xml
+  type-aliases-package: com.sk.exammvc.entity
 
 logging:
   level:

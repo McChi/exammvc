@@ -3,7 +3,7 @@ package com.sk.exammvc.service;
 import com.sk.exammvc.entity.Admin;
 import com.sk.exammvc.entity.Student;
 import com.sk.exammvc.entity.Teacher;
-import com.sk.exammvc.mapper.LoginMapper;
+import com.sk.exammvc.dao.LoginMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

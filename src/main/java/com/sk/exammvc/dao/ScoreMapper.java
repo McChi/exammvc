@@ -1,4 +1,4 @@
-package com.sk.exammvc.mapper;
+package com.sk.exammvc.dao;
 
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;

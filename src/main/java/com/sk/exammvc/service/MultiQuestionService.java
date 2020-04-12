@@ -3,7 +3,7 @@ package com.sk.exammvc.service;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.sk.exammvc.entity.MultiQuestion;
-import com.sk.exammvc.mapper.MultiQuestionMapper;
+import com.sk.exammvc.dao.MultiQuestionMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
