@@ -4,7 +4,7 @@ import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.sk.exammvc.entity.ApiResult;
 import com.sk.exammvc.entity.Score;
-import com.sk.exammvc.serviceimpl.ScoreServiceImpl;
+import com.sk.exammvc.service.ScoreService;
 import com.sk.exammvc.util.ApiResultHandler;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -14,7 +14,7 @@ import java.util.List;
 @RestController
 public class ScoreController {
     @Autowired
-    private ScoreServiceImpl scoreService;
+    private ScoreService scoreService;
 
     @GetMapping("/scores")
     public ApiResult findAll() {

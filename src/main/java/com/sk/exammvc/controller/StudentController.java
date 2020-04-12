@@ -4,7 +4,7 @@ import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.sk.exammvc.entity.ApiResult;
 import com.sk.exammvc.entity.Student;
-import com.sk.exammvc.serviceimpl.StudentServiceImpl;
+import com.sk.exammvc.service.StudentService;
 import com.sk.exammvc.util.ApiResultHandler;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.*;
 public class StudentController {
 
     @Autowired
-    private StudentServiceImpl studentService;
+    private StudentService studentService;
 
     @GetMapping("/students/{page}/{size}")
     public ApiResult findAll(@PathVariable Integer page, @PathVariable Integer size) {

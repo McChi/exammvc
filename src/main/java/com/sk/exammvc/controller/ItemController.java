@@ -3,9 +3,9 @@ package com.sk.exammvc.controller;
 import com.sk.exammvc.entity.ApiResult;
 import com.sk.exammvc.entity.PaperManage;
 import com.sk.exammvc.service.PaperService;
-import com.sk.exammvc.serviceimpl.FillQuestionServiceImpl;
-import com.sk.exammvc.serviceimpl.JudgeQuestionServiceImpl;
-import com.sk.exammvc.serviceimpl.MultiQuestionServiceImpl;
+import com.sk.exammvc.service.FillQuestionService;
+import com.sk.exammvc.service.JudgeQuestionService;
+import com.sk.exammvc.service.MultiQuestionService;
 import com.sk.exammvc.util.ApiResultHandler;
 import com.sk.exammvc.vo.Item;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,13 +19,13 @@ import java.util.List;
 public class ItemController {
 
     @Autowired
-    MultiQuestionServiceImpl multiQuestionService;
+    MultiQuestionService multiQuestionService;
 
     @Autowired
-    FillQuestionServiceImpl fillQuestionService;
+    FillQuestionService fillQuestionService;
 
     @Autowired
-    JudgeQuestionServiceImpl judgeQuestionService;
+    JudgeQuestionService judgeQuestionService;
 
     @Autowired
     PaperService paperService;

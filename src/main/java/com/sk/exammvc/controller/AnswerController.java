@@ -3,7 +3,7 @@ package com.sk.exammvc.controller;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.sk.exammvc.entity.ApiResult;
-import com.sk.exammvc.serviceimpl.AnswerServiceImpl;
+import com.sk.exammvc.service.AnswerService;
 import com.sk.exammvc.util.ApiResultHandler;
 import com.sk.exammvc.vo.AnswerVO;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,12 +11,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
-
 @RestController
 public class AnswerController {
 
     @Autowired
-    private AnswerServiceImpl answerService;
+    private AnswerService answerService;
 
     @GetMapping("/answers/{page}/{size}")
     public ApiResult findAllQuestion(@PathVariable("page") Integer page, @PathVariable("size") Integer size){

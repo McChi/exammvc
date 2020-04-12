@@ -2,7 +2,7 @@ package com.sk.exammvc.controller;
 
 import com.sk.exammvc.entity.ApiResult;
 import com.sk.exammvc.entity.FillQuestion;
-import com.sk.exammvc.serviceimpl.FillQuestionServiceImpl;
+import com.sk.exammvc.service.FillQuestionService;
 import com.sk.exammvc.util.ApiResultHandler;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class FillQuestionController {
 
     @Autowired
-    private FillQuestionServiceImpl fillQuestionService;
+    private FillQuestionService fillQuestionService;
 
     @PostMapping("/fillQuestion")
     public ApiResult add(@RequestBody FillQuestion fillQuestion) {

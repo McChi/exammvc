@@ -2,7 +2,7 @@ package com.sk.exammvc.controller;
 
 import com.sk.exammvc.entity.ApiResult;
 import com.sk.exammvc.entity.MultiQuestion;
-import com.sk.exammvc.serviceimpl.MultiQuestionServiceImpl;
+import com.sk.exammvc.service.MultiQuestionService;
 import com.sk.exammvc.util.ApiResultHandler;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class MultiQuestionController {
 
     @Autowired
-    private MultiQuestionServiceImpl multiQuestionService;
+    private MultiQuestionService multiQuestionService;
 
     @GetMapping("/multiQuestionId")
     public ApiResult findOnlyQuestion() {

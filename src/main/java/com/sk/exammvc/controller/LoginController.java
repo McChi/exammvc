@@ -1,19 +1,18 @@
 package com.sk.exammvc.controller;
 
 import com.sk.exammvc.entity.*;
-import com.sk.exammvc.serviceimpl.LoginServiceImpl;
+import com.sk.exammvc.service.LoginService;
 import com.sk.exammvc.util.ApiResultHandler;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-
 @RestController
 public class LoginController {
 
     @Autowired
-    private LoginServiceImpl loginService;
+    private LoginService loginService;
 
     @PostMapping("/login")
     public ApiResult login(@RequestBody Login login) {

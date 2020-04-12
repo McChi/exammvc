@@ -1,10 +1,10 @@
 package com.sk.exammvc.controller;
 
 import com.sk.exammvc.entity.*;
-import com.sk.exammvc.serviceimpl.FillQuestionServiceImpl;
-import com.sk.exammvc.serviceimpl.JudgeQuestionServiceImpl;
-import com.sk.exammvc.serviceimpl.MultiQuestionServiceImpl;
-import com.sk.exammvc.serviceimpl.PaperServiceImpl;
+import com.sk.exammvc.service.FillQuestionService;
+import com.sk.exammvc.service.JudgeQuestionService;
+import com.sk.exammvc.service.MultiQuestionService;
+import com.sk.exammvc.service.PaperService;
 import com.sk.exammvc.util.ApiResultHandler;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -17,16 +17,16 @@ import java.util.Map;
 public class PaperController {
 
     @Autowired
-    private PaperServiceImpl paperService;
+    private PaperService paperService;
 
     @Autowired
-    private JudgeQuestionServiceImpl judgeQuestionService;
+    private JudgeQuestionService judgeQuestionService;
 
     @Autowired
-    private MultiQuestionServiceImpl multiQuestionService;
+    private MultiQuestionService multiQuestionService;
 
     @Autowired
-    private FillQuestionServiceImpl fillQuestionService;
+    private FillQuestionService fillQuestionService;
     @GetMapping("/papers")
     public ApiResult<PaperManage> findAll() {
        ApiResult res =  ApiResultHandler.buildApiResult(200,"请求成功",paperService.findAll());

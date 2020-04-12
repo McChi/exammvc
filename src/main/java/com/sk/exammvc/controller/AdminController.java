@@ -2,7 +2,7 @@ package com.sk.exammvc.controller;
 
 import com.sk.exammvc.entity.Admin;
 import com.sk.exammvc.entity.ApiResult;
-import com.sk.exammvc.serviceimpl.AdminServiceImpl;
+import com.sk.exammvc.service.AdminService;
 import com.sk.exammvc.util.ApiResultHandler;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -10,9 +10,9 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 public class AdminController {
 
-    private AdminServiceImpl adminService;
+    private AdminService adminService;
     @Autowired
-    public AdminController(AdminServiceImpl adminService){
+    public AdminController(AdminService adminService){
         this.adminService = adminService;
     }
 

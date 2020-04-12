@@ -4,7 +4,7 @@ import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.sk.exammvc.entity.ApiResult;
 import com.sk.exammvc.entity.ExamManage;
-import com.sk.exammvc.serviceimpl.ExamManageServiceImpl;
+import com.sk.exammvc.service.ExamManageService;
 import com.sk.exammvc.util.ApiResultHandler;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.*;
 public class ExamManageController {
 
     @Autowired
-    private ExamManageServiceImpl examManageService;
+    private ExamManageService examManageService;
 
     @GetMapping("/exams")
     public ApiResult findAll(){
