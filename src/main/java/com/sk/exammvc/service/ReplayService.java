@@ -1,20 +1,39 @@
 package com.sk.exammvc.service;
 
 import com.sk.exammvc.entity.Replay;
+import com.sk.exammvc.mapper.ReplayMapper;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-public interface ReplayService {
+@Service
+public class ReplayService {
 
-    List<Replay> findAll();
+    @Autowired
+    private ReplayMapper replayMapper;
 
-    List<Replay> findAllById(Integer messageId);
+    public List<Replay> findAll() {
+        return replayMapper.findAll();
+    }
 
-    Replay findById(Integer replayId);
+    public List<Replay> findAllById(Integer messageId) {
+        return replayMapper.findAllById(messageId);
+    }
 
-    int delete(Integer replayId);
+    public Replay findById(Integer replayId) {
+        return replayMapper.findById(replayId);
+    }
 
-    int update(Replay replay);
+    public int delete(Integer replayId) {
+        return replayMapper.delete(replayId);
+    }
 
-    int add(Replay replay);
+    public int update(Replay replay) {
+        return replayMapper.update(replay);
+    }
+
+    public int add(Replay replay) {
+        return replayMapper.add(replay);
+    }
 }

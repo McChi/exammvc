@@ -3,18 +3,35 @@ package com.sk.exammvc.service;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.sk.exammvc.entity.JudgeQuestion;
+import com.sk.exammvc.mapper.JudgeQuestionMapper;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-public interface JudgeQuestionService {
+@Service
+public class JudgeQuestionService {
 
-    List<JudgeQuestion> findByIdAndType(Integer paperId);
+    @Autowired
+    private JudgeQuestionMapper judgeQuestionMapper;
 
-    IPage<JudgeQuestion> findAll(Page<JudgeQuestion> page);
+    public List<JudgeQuestion> findByIdAndType(Integer paperId) {
+        return judgeQuestionMapper.findByIdAndType(paperId);
+    }
 
-    JudgeQuestion findOnlyQuestionId();
+    public IPage<JudgeQuestion> findAll(Page<JudgeQuestion> page) {
+        return judgeQuestionMapper.findAll(page);
+    }
 
-    int add(JudgeQuestion judgeQuestion);
+    public JudgeQuestion findOnlyQuestionId() {
+        return judgeQuestionMapper.findOnlyQuestionId();
+    }
 
-    List<Integer> findBySubject(String subject, Integer pageNo);
+    public int add(JudgeQuestion judgeQuestion) {
+        return judgeQuestionMapper.add(judgeQuestion);
+    }
+
+    public List<Integer> findBySubject(String subject, Integer pageNo) {
+        return judgeQuestionMapper.findBySubject(subject,pageNo);
+    }
 }

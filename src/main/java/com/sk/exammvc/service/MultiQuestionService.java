@@ -3,18 +3,35 @@ package com.sk.exammvc.service;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.sk.exammvc.entity.MultiQuestion;
+import com.sk.exammvc.mapper.MultiQuestionMapper;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-public interface MultiQuestionService {
+@Service
+public class MultiQuestionService {
 
-    List<MultiQuestion> findByIdAndType(Integer PaperId);
+    @Autowired
+    private MultiQuestionMapper multiQuestionMapper;
 
-    IPage<MultiQuestion> findAll(Page<MultiQuestion> page);
+    public List<MultiQuestion> findByIdAndType(Integer PaperId) {
+        return multiQuestionMapper.findByIdAndType(PaperId);
+    }
 
-    MultiQuestion findOnlyQuestionId();
+    public IPage<MultiQuestion> findAll(Page<MultiQuestion> page) {
+        return multiQuestionMapper.findAll(page);
+    }
 
-    int add(MultiQuestion multiQuestion);
+    public MultiQuestion findOnlyQuestionId() {
+        return multiQuestionMapper.findOnlyQuestionId();
+    }
 
-    List<Integer> findBySubject(String subject, Integer pageNo);
+    public int add(MultiQuestion multiQuestion) {
+        return multiQuestionMapper.add(multiQuestion);
+    }
+
+    public List<Integer> findBySubject(String subject, Integer pageNo) {
+        return multiQuestionMapper.findBySubject(subject,pageNo);
+    }
 }

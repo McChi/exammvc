@@ -1,14 +1,28 @@
 package com.sk.exammvc.service;
 
 import com.sk.exammvc.entity.PaperManage;
+import com.sk.exammvc.mapper.PaperMapper;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-public interface PaperService {
+@Service
+public class PaperService {
 
-    List<PaperManage> findAll();
+    @Autowired
+    private PaperMapper paperMapper;
 
-    List<PaperManage> findById(Integer paperId);
+    public List<PaperManage> findAll() {
+        return paperMapper.findAll();
+    }
 
-    int add(PaperManage paperManage);
+    public List<PaperManage> findById(Integer paperId) {
+        return paperMapper.findById(paperId);
+    }
+
+    public int add(PaperManage paperManage) {
+        return paperMapper.add(paperManage);
+    }
+
 }

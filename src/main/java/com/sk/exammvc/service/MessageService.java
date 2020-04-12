@@ -3,15 +3,33 @@ package com.sk.exammvc.service;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.sk.exammvc.entity.Message;
+import com.sk.exammvc.mapper.MessageMapper;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
-public interface MessageService {
-    IPage<Message> findAll(Page page);
+@Service
+public class MessageService {
 
-    Message findById(Integer id);
+    @Autowired
+    private MessageMapper messageMapper;
 
-    int delete(Integer id);
+    public IPage<Message> findAll(Page page) {
+        return messageMapper.findAll(page);
+    }
 
-    int update(Message message);
+    public Message findById(Integer id) {
+        return messageMapper.findById(id);
+    }
 
-    int add(Message message);
+    public int delete(Integer id) {
+        return messageMapper.delete(id);
+    }
+
+    public int update(Message message) {
+        return messageMapper.update(message);
+    }
+
+    public int add(Message message) {
+        return messageMapper.add(message);
+    }
 }

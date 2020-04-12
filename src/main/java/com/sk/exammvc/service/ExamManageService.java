@@ -3,24 +3,42 @@ package com.sk.exammvc.service;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.sk.exammvc.entity.ExamManage;
+import com.sk.exammvc.mapper.ExamManageMapper;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-public interface ExamManageService {
+@Service
+public class ExamManageService {
+    @Autowired
+    private ExamManageMapper examManageMapper;
 
-    /**
-     * 不分页查询所有考试信息
-     */
-    List<ExamManage> findAll();
-    IPage<ExamManage> findAll(Page<ExamManage> page);
+    public List<ExamManage> findAll() {
+        return examManageMapper.findAll();
+    }
 
-    ExamManage findById(Integer examCode);
+    public IPage<ExamManage> findAll(Page<ExamManage> page) {
+        return examManageMapper.findAll(page);
+    }
 
-    int delete(Integer examCode);
+    public ExamManage findById(Integer examCode) {
+        return examManageMapper.findById(examCode);
+    }
 
-    int update(ExamManage exammanage);
+    public int delete(Integer examCode) {
+        return examManageMapper.delete(examCode);
+    }
 
-    int add(ExamManage exammanage);
+    public int update(ExamManage exammanage) {
+        return examManageMapper.update(exammanage);
+    }
 
-    ExamManage findOnlyPaperId();
+    public int add(ExamManage exammanage) {
+        return examManageMapper.add(exammanage);
+    }
+
+    public ExamManage findOnlyPaperId() {
+        return examManageMapper.findOnlyPaperId();
+    }
 }

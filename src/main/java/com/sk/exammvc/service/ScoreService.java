@@ -3,17 +3,35 @@ package com.sk.exammvc.service;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.sk.exammvc.entity.Score;
+import com.sk.exammvc.mapper.ScoreMapper;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-public interface ScoreService {
-    int add(Score score);
+@Service
+public class ScoreService {
 
-    List<Score> findAll();
+    @Autowired
+    private ScoreMapper scoreMapper;
 
-    IPage<Score> findById(Page page, Integer studentId);
+    public int add(Score score) {
+        return scoreMapper.add(score);
+    }
 
-    List<Score> findById(Integer studentId);
+    public List<Score> findAll() {
+        return scoreMapper.findAll();
+    }
 
-    List<Score> findByExamCode(Integer examCode);
+    public IPage<Score> findById(Page page, Integer studentId) {
+        return scoreMapper.findById(page, studentId);
+    }
+
+    public List<Score> findById(Integer studentId) {
+        return scoreMapper.findById(studentId);
+    }
+
+    public List<Score> findByExamCode(Integer examCode) {
+        return scoreMapper.findByExamCode(examCode);
+    }
 }

@@ -3,17 +3,36 @@ package com.sk.exammvc.service;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.sk.exammvc.entity.Student;
+import com.sk.exammvc.mapper.StudentMapper;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
-public interface StudentService {
+@Service
+public class StudentService {
+    @Autowired
+    private StudentMapper studentMapper;
 
-    IPage<Student> findAll(Page<Student> page);
+    public IPage<Student> findAll(Page<Student> page) {
+        return studentMapper.findAll(page);
+    }
 
-    Student findById(Integer studentId);
+    public Student findById(Integer studentId) {
+        return studentMapper.findById(studentId);
+    }
 
-    int deleteById(Integer studentId);
+    public int deleteById(Integer studentId) {
+        return studentMapper.deleteById(studentId);
+    }
 
-    int update(Student student);
+    public int update(Student student) {
+        return studentMapper.update(student);
+    }
 
-    int updatePwd(Student student);
-    int add(Student student);
+    public int updatePwd(Student student) {
+        return studentMapper.updatePwd(student);
+    }
+
+    public int add(Student student) {
+        return studentMapper.add(student);
+    }
 }
