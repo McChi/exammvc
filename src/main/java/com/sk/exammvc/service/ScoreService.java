@@ -24,7 +24,7 @@ public class ScoreService {
     }
 
     public IPage<Score> findById(Page page, Integer studentId) {
-        return scoreMapper.findById(page, studentId);
+        return scoreMapper.findByIdPage(page, studentId);
     }
 
     public List<Score> findById(Integer studentId) {
