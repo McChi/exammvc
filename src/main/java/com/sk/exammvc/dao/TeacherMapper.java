@@ -15,16 +15,14 @@ public interface TeacherMapper {
     /**
      * 按照分页的方式查找教师
      *
-     * @param page
+     * @param page 分页对象
      * @return com.baomidou.mybatisplus.core.metadata.IPage<com.sk.exammvc.entity.Teacher>
      **/
-    @Select("select * from teacher")
     IPage<Teacher> findAll(Page page);
 
     /**
      * 查找教师
      *
-     * @param
      * @return java.util.List<com.sk.exammvc.entity.Teacher>
      **/
     @Select("select * from teacher")
@@ -36,7 +34,6 @@ public interface TeacherMapper {
      * @param teacherId 教师账号
      * @return com.sk.exammvc.entity.Teacher
      **/
-    @Select("select * from teacher where teacherId = #{teacherId}")
     Teacher findById(Integer teacherId);
 
     /**
@@ -45,7 +42,6 @@ public interface TeacherMapper {
      * @param teacherId 教师账号
      * @return int
      **/
-    @Delete("delete from teacher where teacherId = #{teacherId}")
     int deleteById(Integer teacherId);
 
     /**
@@ -54,9 +50,6 @@ public interface TeacherMapper {
      * @param teacher 教师信息
      * @return int
      **/
-    @Update("update teacher set teacherName = #{teacherName},sex = #{sex}," +
-            "tel = #{tel}, email = #{email},pwd = #{pwd},cardId = #{cardId}," +
-            "role = #{role},institute = #{institute},type = #{type} where teacherId = #{teacherId}")
     int update(Teacher teacher);
 
     /**
@@ -68,7 +61,5 @@ public interface TeacherMapper {
      * @date 17:50 2020/4/11
      **/
     @Options(useGeneratedKeys = true, keyProperty = "teacherId")
-    @Insert("insert into teacher(teacherName,sex,tel,email,pwd,cardId,role,type,institute) " +
-            "values(#{teacherName},#{sex},#{tel},#{email},#{pwd},#{cardId},#{role},#{type},#{institute})")
     int add(Teacher teacher);
 }
