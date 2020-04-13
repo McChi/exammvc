@@ -27,6 +27,7 @@ public class PaperController {
 
     @Autowired
     private FillQuestionService fillQuestionService;
+
     @GetMapping("/papers")
     public ApiResult<PaperManage> findAll() {
        ApiResult res =  ApiResultHandler.buildApiResult(200,"请求成功",paperService.findAll());

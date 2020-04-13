@@ -12,11 +12,8 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 public class TeacherController {
 
-    private TeacherService teacherService;
     @Autowired
-    public TeacherController(TeacherService teacherService){
-        this.teacherService = teacherService;
-    }
+    private TeacherService teacherService;
 
     @GetMapping("/teachers/{page}/{size}")
     public ApiResult findAll(@PathVariable Integer page, @PathVariable Integer size){
