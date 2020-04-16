@@ -28,5 +28,4 @@ public class ExamManage {
 
     private String type;
 
-    private String tips;
 }

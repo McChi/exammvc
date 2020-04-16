@@ -17,11 +17,11 @@
         update exam_manage set description = #{description},source = #{source},paperId = #{paperId},
             examDate = #{examDate},totalTime = #{totalTime},grade = #{grade},
             major = #{major},institute = #{institute},totalScore = #{totalScore},
-            type = #{type},tips = #{tips} where examCode = #{examCode}
+            type = #{type} where examCode = #{examCode}
     </update>
     <insert id="add">
-        insert into exam_manage(description,source,paperId,examDate,totalTime,grade,major,institute,totalScore,type,tips)
-            values(#{description},#{source},#{paperId},#{examDate},#{totalTime},#{grade},#{major},#{institute},#{totalScore},#{type},#{tips})
+        insert into exam_manage(description,source,paperId,examDate,totalTime,grade,major,institute,totalScore,type)
+            values(#{description},#{source},#{paperId},#{examDate},#{totalTime},#{grade},#{major},#{institute},#{totalScore},#{type})
     </insert>
     <select id="findOnlyPaperId" resultType="com.sk.exammvc.entity.ExamManage">
         select paperId from exam_manage order by paperId desc limit 1
