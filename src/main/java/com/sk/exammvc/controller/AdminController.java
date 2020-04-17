@@ -10,11 +10,8 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 public class AdminController {
 
-    private AdminService adminService;
     @Autowired
-    public AdminController(AdminService adminService){
-        this.adminService = adminService;
-    }
+    private AdminService adminService;
 
     @GetMapping("/admins")
     public ApiResult findAll(){
