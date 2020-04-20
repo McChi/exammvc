@@ -6,6 +6,7 @@ import com.sk.exammvc.service.JudgeQuestionService;
 import com.sk.exammvc.service.MultiQuestionService;
 import com.sk.exammvc.service.PaperService;
 import com.sk.exammvc.util.ApiResultHandler;
+import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -14,6 +15,7 @@ import java.util.List;
 import java.util.Map;
 
 @RestController
+@Api(value = "/paper")
 public class PaperController {
 
     @Autowired

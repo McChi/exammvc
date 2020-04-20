@@ -6,10 +6,12 @@ import com.sk.exammvc.entity.ApiResult;
 import com.sk.exammvc.entity.Teacher;
 import com.sk.exammvc.service.TeacherService;
 import com.sk.exammvc.util.ApiResultHandler;
+import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
+@Api(value = "/teacher")
 public class TeacherController {
 
     @Autowired

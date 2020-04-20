@@ -4,10 +4,12 @@ import com.sk.exammvc.entity.Admin;
 import com.sk.exammvc.entity.ApiResult;
 import com.sk.exammvc.service.AdminService;
 import com.sk.exammvc.util.ApiResultHandler;
+import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
+@Api(value = "/admin")
 public class AdminController {
 
     @Autowired

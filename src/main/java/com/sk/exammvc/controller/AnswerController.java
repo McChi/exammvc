@@ -6,12 +6,14 @@ import com.sk.exammvc.entity.ApiResult;
 import com.sk.exammvc.service.AnswerService;
 import com.sk.exammvc.util.ApiResultHandler;
 import com.sk.exammvc.vo.AnswerVO;
+import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
+@Api(value = "/answer")
 public class AnswerController {
 
     @Autowired
