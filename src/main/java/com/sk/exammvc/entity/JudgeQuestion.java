@@ -15,8 +15,6 @@ public class JudgeQuestion {
 
     private String level;
 
-    private String section;
-
     private Integer score;
 
     private String analysis; //题目解析
