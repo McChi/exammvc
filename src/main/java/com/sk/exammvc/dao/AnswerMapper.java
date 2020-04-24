@@ -15,8 +15,8 @@ public interface AnswerMapper {
     * @param page 分页对象
     * @return com.baomidou.mybatisplus.core.metadata.IPage<com.sk.exammvc.vo.AnswerVO>
     **/
-    @Select("select question, subject, score, section,level, \"选择题\" as type from multi_question " +
-            "union select  question, subject, score, section,level, \"判断题\" as type  from judge_question " +
-            "union select  question, subject, score, section,level, \"填空题\" as type from fill_question")
+    @Select("select question, subject, score, level, \"选择题\" as type from multi_question " +
+            "union select question, subject, score, level, \"判断题\" as type  from judge_question " +
+            "union select question, subject, score, level, \"填空题\" as type from fill_question")
     IPage<AnswerVO> findAll(Page page);
 }
