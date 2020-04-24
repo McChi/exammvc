@@ -17,5 +17,4 @@ public class FillQuestion {
 
     private String level;
 
-    private String analysis; //题目解析
 }

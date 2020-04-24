@@ -12,7 +12,7 @@
     </select>
     <insert id="add">
         insert into judge_question(subject,question,answer,analysis,level,section) values
-            (#{subject},#{question},#{answer},#{analysis},#{level})
+            (#{subject},#{question},#{answer},#{level})
     </insert>
     <select id="findBySubject" resultType="java.lang.Integer">
         select questionId from judge_question  where subject=#{subject}  order by rand() desc limit #{pageNo}
