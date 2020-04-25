@@ -31,4 +31,13 @@ public interface PaperMapper {
     * @return int
     **/
     int add(PaperManage paperManage);
+
+    /**
+    * 删除试卷
+    *
+    * @param paperId 试卷号
+    * @return int
+    **/
+    int deleteById(Integer paperId);
+
 }

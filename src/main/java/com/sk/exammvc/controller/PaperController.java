@@ -40,4 +40,9 @@ public class PaperController {
         }
         return ApiResultHandler.buildApiResult(400,"添加失败",res);
     }
+
+    @DeleteMapping("/paper/{paperId}")
+    public ApiResult deleteById(@PathVariable("paperId") Integer paperId) {
+        return ApiResultHandler.buildApiResult(200,"删除成功",paperService.deleteById(paperId));
+    }
 }

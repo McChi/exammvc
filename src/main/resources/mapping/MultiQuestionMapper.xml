@@ -11,8 +11,8 @@
         select questionId from multi_question order by questionId desc limit 1
     </select>
     <insert id="add">
-        insert into multi_question(subject,question,answerA,answerB,answerC,answerD,rightAnswer,level)
-            values(#{subject},#{question},#{answerA},#{answerB},#{answerC},#{answerD},#{rightAnswer},#{level})
+        insert into multi_question(subject,question,answerA,answerB,answerC,answerD,rightAnswer)
+            values(#{subject},#{question},#{answerA},#{answerB},#{answerC},#{answerD},#{rightAnswer})
     </insert>
     <select id="findBySubject" resultType="java.lang.Integer">
         select questionId from multi_question  where subject =#{subject} order by rand() desc limit #{pageNo}

@@ -13,8 +13,6 @@ public class JudgeQuestion {
 
     private String answer;
 
-    private String level;
-
     private Integer score;
 
 }

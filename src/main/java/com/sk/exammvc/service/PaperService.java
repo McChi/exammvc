@@ -49,4 +49,8 @@ public class PaperService {
         map.put(3,judgeQuestionRes);
         return map;
     }
+
+    public int deleteById(Integer paperId){
+        return paperMapper.deleteById(paperId);
+    }
 }

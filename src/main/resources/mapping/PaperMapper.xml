@@ -11,4 +11,7 @@
         insert into paper_manage(paperId,questionType,questionId) values
             (#{paperId},#{questionType},#{questionId})
     </insert>
+    <delete id="deleteById">
+        delete from paper_manage where paperId = #{paperId}
+    </delete>
 </mapper>

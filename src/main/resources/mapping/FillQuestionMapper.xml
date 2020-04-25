@@ -11,8 +11,8 @@
         select questionId from fill_question order by questionId desc limit 1
     </select>
     <insert id="add">
-        insert into fill_question(subject,question,answer,level) values
-            (#{subject,},#{question},#{answer},#{level})
+        insert into fill_question(subject,question,answer) values
+            (#{subject,},#{question},#{answer})
     </insert>
     <select id="findBySubject" resultType="java.lang.Integer">
         select questionId from fill_question where subject = #{subject} order by rand() desc limit #{pageNo}

@@ -19,8 +19,6 @@ public class MultiQuestion {
 
     private String question;
 
-    private String level;
-
     private String rightAnswer;
 
     private Integer score;
