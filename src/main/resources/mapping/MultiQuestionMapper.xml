@@ -11,7 +11,7 @@
         select questionId from multi_question order by questionId desc limit 1
     </select>
     <insert id="add">
-        insert into multi_question(subject,question,answerA,answerB,answerC,answerD,rightAnswer,analysis,section,level)
+        insert into multi_question(subject,question,answerA,answerB,answerC,answerD,rightAnswer,level)
             values(#{subject},#{question},#{answerA},#{answerB},#{answerC},#{answerD},#{rightAnswer},#{level})
     </insert>
     <select id="findBySubject" resultType="java.lang.Integer">

@@ -11,7 +11,7 @@
         select questionId from judge_question order by questionId desc limit 1
     </select>
     <insert id="add">
-        insert into judge_question(subject,question,answer,analysis,level,section) values
+        insert into judge_question(subject,question,answer,level) values
             (#{subject},#{question},#{answer},#{level})
     </insert>
     <select id="findBySubject" resultType="java.lang.Integer">
