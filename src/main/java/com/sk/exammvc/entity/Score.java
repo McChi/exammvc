@@ -10,11 +10,7 @@ public class Score {
 
     private String subject;
 
-    private Integer ptScore;
-
     private Integer etScore;
-
-    private Integer score;
 
     private Integer scoreId;
 

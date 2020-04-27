@@ -2,16 +2,16 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.sk.exammvc.dao.ScoreMapper">
     <insert id="add">
-        insert into score(examCode,studentId,subject,ptScore,etScore,score,answerDate) values(#{examCode},#{studentId},#{subject},#{ptScore},#{etScore},#{score},#{answerDate})
+        insert into score(examCode,studentId,subject,etScore,answerDate) values(#{examCode},#{studentId},#{subject},#{etScore},#{answerDate})
     </insert>
     <select id="findAll" resultType="com.sk.exammvc.entity.Score">
-        select scoreId,examCode,studentId,subject,ptScore,etScore,score,answerDate from score order by scoreId desc
+        select scoreId,examCode,studentId,subject,etScore,answerDate from score order by scoreId desc
     </select>
     <select id="findByIdPage" resultType="com.sk.exammvc.entity.Score">
-        select scoreId,examCode,studentId,subject,ptScore,etScore,score,answerDate from score where studentId = #{studentId} order by scoreId desc
+        select scoreId,examCode,studentId,subject,etScore,answerDate from score where studentId = #{studentId} order by scoreId desc
     </select>
     <select id="findById" resultType="com.sk.exammvc.entity.Score">
-        select scoreId,examCode,studentId,subject,ptScore,etScore,score,answerDate from score where studentId = #{studentId}
+        select scoreId,examCode,studentId,subject,etScore,answerDate from score where studentId = #{studentId}
     </select>
     <select id="findByExamCode" resultType="com.sk.exammvc.entity.Score">
         select max(etScore) as etScore from score where examCode = #{examCode} group by studentId
