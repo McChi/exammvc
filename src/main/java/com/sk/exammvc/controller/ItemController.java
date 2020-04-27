@@ -76,6 +76,6 @@ public class ItemController {
                 return ApiResultHandler.buildApiResult(400, "判断题题组卷保存失败", null);
         }
 
-        return ApiResultHandler.buildApiResult(200, "试卷组卷成功", null);
+        return ApiResultHandler.buildApiResult(200, "试卷组卷完成", null);
     }
 }

@@ -13,6 +13,6 @@ public class FillQuestion {
 
     private String answer;
 
-    private String level;
+    private Integer score;
 
 }
