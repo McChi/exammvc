@@ -38,4 +38,8 @@ public class TeacherService {
     public int add(Teacher teacher) {
         return teacherMapper.add(teacher);
     }
+
+    public int updatePwd(Teacher teacher){
+        return teacherMapper.updatePwd(teacher);
+    }
 }

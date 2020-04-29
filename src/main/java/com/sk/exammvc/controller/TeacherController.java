@@ -44,4 +44,10 @@ public class TeacherController {
     public ApiResult add(@RequestBody Teacher teacher){
         return ApiResultHandler.success(teacherService.add(teacher));
     }
+
+    @PutMapping("/teacherPWD")
+    public ApiResult updatePwd(@RequestBody Teacher teacher){
+        teacherService.updatePwd(teacher);
+        return ApiResultHandler.buildApiResult(200,"密码更新成功",null);
+    }
 }

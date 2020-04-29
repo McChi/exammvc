@@ -2,6 +2,7 @@ package com.sk.exammvc.dao;
 
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.sk.exammvc.entity.Student;
 import com.sk.exammvc.entity.Teacher;
 import org.apache.ibatis.annotations.*;
 import org.springframework.stereotype.Repository;
@@ -62,4 +63,13 @@ public interface TeacherMapper {
      **/
     @Options(useGeneratedKeys = true, keyProperty = "teacherId")
     int add(Teacher teacher);
+
+    /**
+     * 更新密码
+     *
+     * @param teacher 学生信息
+     * @return 受影响的记录条数
+     */
+    int updatePwd(Teacher teacher);
+
 }

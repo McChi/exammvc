@@ -19,4 +19,7 @@
         insert into teacher(teacherName,sex,tel,email,pwd,cardId,role,type,institute)
             values(#{teacherName},#{sex},#{tel},#{email},#{pwd},#{cardId},#{role},#{type},#{institute})
     </insert>
+    <update id="updatePwd">
+        update teacher set pwd = #{pwd} where teacherId = #{teacherId}
+    </update>
 </mapper>
