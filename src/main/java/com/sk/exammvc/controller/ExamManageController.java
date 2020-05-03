@@ -79,4 +79,12 @@ public class ExamManageController {
         }
         return ApiResultHandler.buildApiResult(400,"请求失败",res);
     }
+
+    @GetMapping("/examByMG/{studentId}")
+    public ApiResult findByMG(@PathVariable("studentId") Integer studentId){
+        System.out.println("根据专业和班级查询");
+        ApiResult apiResult = ApiResultHandler.buildApiResult(200,"请求成功",examManageService.findByMG(studentId));
+        return apiResult;
+    }
+
 }

@@ -65,4 +65,12 @@ public interface ExamManageMapper {
      * @return paperId
      **/
     ExamManage findOnlyPaperId();
+
+    /**
+    * 根据专业和年级查询试卷
+    *
+    * @param studentId 学号
+    * @return com.sk.exammvc.entity.ExamManage
+    **/
+    List<ExamManage> findByMG(Integer studentId);
 }

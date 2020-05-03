@@ -11,6 +11,7 @@ import java.util.List;
 
 @Service
 public class ExamManageService {
+
     @Autowired
     private ExamManageMapper examManageMapper;
 
@@ -40,5 +41,9 @@ public class ExamManageService {
 
     public ExamManage findOnlyPaperId() {
         return examManageMapper.findOnlyPaperId();
+    }
+
+    public List<ExamManage> findByMG(Integer studentId){
+        return examManageMapper.findByMG(studentId);
     }
 }

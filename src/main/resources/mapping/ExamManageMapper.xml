@@ -26,4 +26,7 @@
     <select id="findOnlyPaperId" resultType="com.sk.exammvc.entity.ExamManage">
         select paperId from exam_manage order by paperId desc limit 1
     </select>
+    <select id="findByMG" resultType="com.sk.exammvc.entity.ExamManage">
+        select * from student s,exam_manage e where s.grade = e.grade and s.major = e.major and s.studentId = #{studentId}
+    </select>
 </mapper>
