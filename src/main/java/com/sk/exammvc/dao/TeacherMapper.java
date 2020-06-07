@@ -58,8 +58,6 @@ public interface TeacherMapper {
      *
      * @param teacher 教师信息
      * @return int
-     * @author baishucong
-     * @date 17:50 2020/4/11
      **/
     @Options(useGeneratedKeys = true, keyProperty = "teacherId")
     int add(Teacher teacher);
